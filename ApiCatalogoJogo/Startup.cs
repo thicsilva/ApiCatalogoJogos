@@ -28,7 +28,7 @@ namespace ApiCatalogoJogo
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers().ConfigureApiBehaviorOptions(options=>options.SuppressModelStateInvalidFilter=false);
+            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiCatalogoJogo", Version = "v1" });
