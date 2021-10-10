@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiCatalogoJogo</name>
+    </assembly>
+    <members>
+        <member name="M:ApiCatalogoJogo.Controllers.V1.GamesController.GetGames(System.Int32,System.Int32)">
+            <summary>
+            Get all games with pagination
+            </summary>
+            <remarks>
+            Is not possible get games without pagination.
+            </remarks>
+            <param name="page">Indicate which page is being consulted. Minimum 1.</param>
+            <param name="quantity">Indicates the number of records per page. Minimum 1 and Maximum 50.</param>
+            <response code="200">Return a list of games.</response>
+            <response code="204">If there are no games registered.</response>   
+        </member>
+        <member name="M:ApiCatalogoJogo.Controllers.V1.GamesController.GetGame(System.Guid)">
+            <summary>
+            Get a game by your Id
+            </summary>
+            <param name="gameId">Id from game searched.</param>
+            <response code="200">Return a game.</response>
+            <response code="204">If there are no game registered with Id.</response>   
+        </member>
+        <member name="M:ApiCatalogoJogo.Controllers.V1.GamesController.CreateGame(ApiCatalogoJogo.InputModel.GameInputModel)">
+            <summary>
+            Insert a new game into catalog
+            </summary>
+            <param name="gameInputModel">Game data to be included.</param>
+            <response code="201">If the game has included.</response>
+            <response code="422">If there are registered game with same name and producer.</response>   
+        </member>
+        <member name="M:ApiCatalogoJogo.Controllers.V1.GamesController.UpdateGame(System.Guid,ApiCatalogoJogo.InputModel.GameInputModel)">
+            <summary>
+            Update a game into catalog
+            </summary>
+            <param name="gameId">Game Id to be updated.</param>
+            <param name="gameInputModel">Game data to be updated.</param>
+            <response code="200">If the game has updated.</response>
+            <response code="404">If there are no game registered with this Id.</response>
+        </member>
+        <member name="M:ApiCatalogoJogo.Controllers.V1.GamesController.UpdateGame(System.Guid,System.Double)">
+            <summary>
+            Update price of a game
+            </summary>
+            <param name="gameId">Game Id to be updated.</param>
+            <param name="price">Game price to be updated.</param>
+            <response code="200">If the game has updated.</response>
+            <response code="404">If there are no game registered with this Id.</response>
+        </member>
+        <member name="M:ApiCatalogoJogo.Controllers.V1.GamesController.DeleteGame(System.Guid)">
+            <summary>
+            Remove a game from catalog.
+            </summary>
+            <param name="gameId">Game Id to be deleted.</param>
+            <response code="200">If the game has deleted.</response>
+            <response code="404">If there are no game registered with this Id.</response>
+        </member>
+    </members>
+</doc>
